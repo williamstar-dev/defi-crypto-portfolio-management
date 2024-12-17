@@ -1,0 +1,7 @@
+numerapi
+pandas
+numpy
+requests
+websocket-client
+eth-account
+hyperliquid
