@@ -63,21 +63,47 @@ For detailed insights into the system’s design and functionality, refer to the
    ```
 
 2. Install dependencies (if applicable):
-  ```bash
-  Copy code
-  pip install -r requirements.txt
-  ```
-3. Configure the system:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Configure the DEX system:
    Rename hyperliquid_config_template.json to hyperliquid_config.json and enter your API credentials for HyperLiquid.
+   ```bash
+   cp hyperliquid_config_template.json hyperliquid_config.json
+   vim hyperliquid_config.json
+   ```
 
-4. Run the example notebook (in testnet!):
+5. Run the example notebook (in testnet!):
    Example Code.ipynb
+
+## Code Example
+
+```python
+# Instantiate Oracle and DEX interfaces
+oracle = NumeraiTBNOracle()
+dex = HyperLiquidDEX("testnet")
+
+print(dex.net_liq)
+```
+600.712248
+```python
+print( dex.positions )
+```
+{'BTC': 39.71432, 'ETH': 40.83264, 'BNB': 40.77696, 'INJ': 40.3606, 'TON': 39.34125, 'SUSHI': -41.77378, 'HBAR': -39.20392, 'XLM': -40.3209, 'SAND': -42.2886, 'IOTA': -38.87389}
+```python
+# Instantiate Portfolio Manager with Oracle
+portfolio_manager = PortfolioManager(oracle, dex)
+
+# Perform portfolio management
+portfolio_manager.manage_portfolio()
+```
+...
+
 
 ## 📈 Future Enhancements
 Implement concrete Oracle and DEX classes for integration with live data sources.
 Extend the Portfolio Manager to include risk management and performance analytics.
 Build additional DEX integrations to support more trading platforms.
-
 
 ## ⚠️ Disclaimer
 This project is a conceptual implementation and is not intended as financial advice or a recommendation. The software is provided as-is and should be used at your own risk. The maintainers are not responsible for any outcomes resulting from the use of this software.
