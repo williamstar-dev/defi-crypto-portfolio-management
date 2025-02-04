@@ -7,21 +7,6 @@ Welcome to the **DeFi Crypto Portfolio Management System** repository! This proj
 
 ---
 
-# 📄 Contents
-
-This repository includes the following key files and directories:
-
-| **File/Directory**              | **Description**                                                                                 |
-|----------------------------------|-------------------------------------------------------------------------------------------------|
-| `Defi_Crypto_Portofolio_System_v1.pdf` | Documentation detailing the system’s design, architecture, and implementation.                   |
-| `Example Code.ipynb`            | A working example demonstrating the integration of Oracle, Portfolio Manager, and DEX modules.  |
-| `design_schem.jpg`              | Visual schematic of the system's architecture.                                                 |
-| `dex_interfaces.py`             | Python code defining the generic DEX interface.                                                |
-| `hyperliquid_config_template.json` | Example configuration file for DEX API integration.                                             |
-| `oracle_interfaces.py`          | Python code defining the generic Oracle interface.                                             |
-
----
-
 # 🛠 System Overview
 
 The system is built around three primary components:
