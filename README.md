@@ -3,7 +3,7 @@
 Welcome to the **DeFi Crypto Portfolio Management System** repository! This project provides a modular and extensible architecture for managing cryptocurrency portfolios using **Decentralized Finance (DeFi)** protocols. The system leverages **Oracle models**, a **Portfolio Manager**, and **DEX (Decentralized Exchange) interfaces** to automate and optimize portfolio rebalancing based on predictive analytics.
 
 ![System Design](design_schem.jpg)
-*System Design Overview*
+_System Design Overview_
 
 ---
 
@@ -14,12 +14,14 @@ The system is built around three primary components:
 1. **Oracle Interface**  
    Computes optimal portfolio weights based on real-time market data and predictive models (e.g., Numerai meta-model).  
    **Key Functions**:
+
    - Fetch portfolio weights (`fetch_portfolio_weights`)
    - Validate portfolio weights (`validate_weights`)
 
 2. **Portfolio Manager**  
    Acts as the central coordinator, interfacing with the Oracle for weights and the DEX for execution.  
    **Key Function**:
+
    - Manage portfolio (`manage_portfolio`) by fetching and validating weights, then executing trades.
 
 3. **DEX Interface**  
@@ -42,6 +44,7 @@ For detailed insights into the system’s design and functionality, refer to the
 # 🚀 Quick Start
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/yourusername/defi-crypto-portfolio.git
    cd defi-crypto-portfolio
@@ -53,12 +56,13 @@ For detailed insights into the system’s design and functionality, refer to the
    ```
 3. Configure the DEX system:
    Rename hyperliquid_config_template.json to hyperliquid_config.json and enter your API credentials for HyperLiquid.
+
    ```bash
    cp hyperliquid_config_template.json hyperliquid_config.json
    vim hyperliquid_config.json
    ```
 
-5. Run the example notebook (in testnet!):
+4. Run the example notebook (in testnet!):
    Example Code.ipynb
 
 # Code Example
@@ -70,11 +74,15 @@ dex = HyperLiquidDEX("testnet")
 
 print(dex.net_liq)
 ```
+
 600.712248
+
 ```python
 print( dex.positions )
 ```
+
 {'BTC': 39.71432, 'ETH': 40.83264, 'BNB': 40.77696, 'INJ': 40.3606, 'TON': 39.34125, 'SUSHI': -41.77378, 'HBAR': -39.20392, 'XLM': -40.3209, 'SAND': -42.2886, 'IOTA': -38.87389}
+
 ```python
 # Instantiate Portfolio Manager with Oracle
 portfolio_manager = PortfolioManager(oracle, dex)
@@ -82,6 +90,7 @@ portfolio_manager = PortfolioManager(oracle, dex)
 # Perform portfolio management
 portfolio_manager.manage_portfolio()
 ```
+
 ...
 
 # Backtester Overview
@@ -106,7 +115,7 @@ The integration of risk metrics into the backtesting process provides valuable i
 
 # Usage
 
-To run the backtester: https://github.com/jefferythewind/defi_crypto_pm/blob/main/Back%20Tester.ipynb
+To run the backtester: https://github.com/williamstar-dev/defi_crypto_pm/blob/main/Back%20Tester.ipynb
 
 1. Ensure access to HyperLiquid's S3 buckets and configure the data retrieval settings.
 
@@ -119,21 +128,24 @@ Refer to the Backtester Notebook for detailed implementation and example usage. 
 This module is a critical step toward refining trading strategies and enhancing the overall performance of the system.
 
 ## 📈 Future Enhancements
+
 Implement concrete Oracle and DEX classes for integration with live data sources.
 Extend the Portfolio Manager to include risk management and performance analytics.
 Build additional DEX integrations to support more trading platforms.
 
 ## ⚠️ Disclaimer
+
 This project is a conceptual implementation and is not intended as financial advice or a recommendation. The software is provided as-is and should be used at your own risk. The maintainers are not responsible for any outcomes resulting from the use of this software.
 
 ## 📝 Contributing
+
 We welcome contributions! If you have suggestions, feature requests, or bug fixes, feel free to open an issue or submit a pull request.
 
 ## 🔗 License
+
 This project is licensed under the MIT License.
 
 ## 🤝 Acknowledgments
+
 Inspired by cutting-edge developments in DeFi and Numerai's meta-model.
 Special thanks to contributors and collaborators for their invaluable input.
-
-
